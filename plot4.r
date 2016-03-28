@@ -22,14 +22,17 @@ png("Plot4.png", width = 480, height = 480, units = "px")
 
 par(mfrow = c(2,2))
 
+### Topleft Plot
 plot(data2$Global_active_power, type = 'l', xaxt = 'n',
      ylab = "Global Active Power (kilowatts)", xlab = "Date")
 axis(1, at = c(0, 1450, 2900), labels = c("Thur", "Fri", "Sat"))
 
+### Topright Plot
 plot(data2$Voltage, type = 'l', xaxt = 'n',
      ylab = "Voltage", xlab = "datetime")
 axis(1, at = c(0, 1450, 2900), labels = c("Thur", "Fri", "Sat"))
 
+### Bottomleft Plot
 plot(data2$Sub_metering_3, type = 'l', col = 'blue', ylab = "Energy sub metering",
      xaxt = "n")
 lines(data2$Sub_metering_1, col = 'black')
@@ -38,6 +41,7 @@ axis(1, at = c(0, 1450, 2900), labels = c("Thur", "Fri", "Sat"))
 legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
        lty = c(1,1,1), lwd = c(2,2,2), col = c("black", "red", "blue") )
 
+### Bottomright Plot
 plot(data2$Global_reactive_power, type = 'l', xaxt = 'n',
      ylab = "Global reactive power", xlab = "datetime")
 axis(1, at = c(0, 1450, 2900), labels = c("Thur", "Fri", "Sat"))
